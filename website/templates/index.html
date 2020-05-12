@@ -303,7 +303,8 @@
                     <div class="col-lg-5">
                         <div class="appointment-form">
                             <h3>Make an Appointment</h3>
-                            <form action="#">
+                            <form action="#" method="POST">
+                            	{% csrf_token %}
                                 <div class="form-group">
                                     <label>Full Name</label>
                                     <input type="text" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" required>
