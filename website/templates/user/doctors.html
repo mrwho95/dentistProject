@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {%load static%}
-{% block title%}Medcare Contact{%endblock%}
+{% block title%}Medcare Doctors{%endblock%}
 {% block content %}
 
     <!--================Home Banner Area =================-->
@@ -40,12 +40,13 @@
             </div>
 
             <div class="row">
+                {% for parameter in doctor%}
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card card-team">
                         <img class="card-img rounded-0" src="{%static 'website/img/team/1.jpg'%}" alt="">
                         <div class="card-team__body text-center">
-                            <h3><a href="#">Dr Adam Brain</a></h3>
-                            <p>Cardiologist</p>
+                            <h3><a href="#">{{parameter.name}}</a></h3>
+                            <p>{{parameter.department}}</p>
                             <div class="team-footer d-flex justify-content-between">
                                 <a class="dn_btn" href=""><i class="ti-mobile"></i>+7 235 365 2365</a>
                                 <ul class="card-team__social">
@@ -58,8 +59,9 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
-                <div class="col-12 col-md-6 col-lg-4">
+                <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="card card-team">
                         <img class="card-img rounded-0" src="{%static 'website/img/team/2.jpg'%}" alt="">
                         <div class="card-team__body text-center">
@@ -95,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
