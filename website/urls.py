@@ -36,4 +36,6 @@ urlpatterns = [
 
 	#admin
 	path('adminHome.html', views.adminHome, name= 'adminHome'),
+	path('adminCustomerContact.html', views.adminCustomerContact, name= 'adminCustomerContact'),
+
 ]

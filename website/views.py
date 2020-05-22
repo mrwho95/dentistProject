@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-from .models import Doctor  #import {class name from model file}
-from .models import Contact
+from .models import Doctor, Contact  #import {class name from model file}
+# from .models import Contact
 
 # Create your views here.
 # def home(request):
@@ -55,6 +55,13 @@ def element(request):
 #admin
 def adminHome(request):
 	return render(request, 'admin/home.html', {})
+
+
+def adminCustomerContact(request):
+	customerContactDataset = Contact.objects.all
+	return render(request, 'admin/customerContact.html', {'contactDataset': customerContactDataset})
+
+
 
 
 

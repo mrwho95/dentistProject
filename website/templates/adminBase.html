@@ -17,6 +17,9 @@
     <!-- main css -->
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 </head>
 <body>
 
@@ -52,19 +55,19 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="adminHome.html">Home</a></li> 
+                            <!-- <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
                             <li class="nav-item"><a class="nav-link" href="department.html">Department</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>    
+                            <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>   -->  
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <a href="adminCustomerContact.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="element.html">element</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="adminCustomerContact.html">Contact</a></li>
+                                    <!-- <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="element.html">element</a></li> -->
                                 </ul>
                             </li> 
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -80,7 +83,7 @@
     <!-- start footer Area -->
     <footer class="footer-area area-padding-top">
         <div class="container">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-2 col-sm-6 single-footer-widget">
                     <h4>Top Products</h4>
                     <ul>
@@ -136,7 +139,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row footer-bottom d-flex justify-content-between">
             <p class="col-lg-8 col-sm-12 footer-text m-0">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -169,5 +172,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'website/js/jquery.validate.min.js' %}"></script>
 <script src="{% static 'website/js/mail-script.js' %}"></script>
 <script src="{% static 'website/js/theme.js' %}"></script>
+
+<!-- datatable -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
 </body>
 </html>
+
+<script>
+    $(document).ready( function () {
+    $('#contactTable').DataTable({
+        paging: true
+    });
+} );
+</script>
