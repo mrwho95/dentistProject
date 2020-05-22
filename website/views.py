@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from .models import Doctor, Contact  #import {class name from model file}
-# from .models import Contact
+from .models import Doctor, Contact, Staff #import {class name from model file}
+from .forms import StaffForm
 import sweetify
+import uuid
+
 
 # Create your views here.
 # def home(request):
@@ -57,6 +59,8 @@ def element(request):
 def adminHome(request):
 	return render(request, 'admin/home.html', {})
 
+def adminCustomerAppointment(request):
+	return render(request, 'admin/customerAppointment.html', {})
 
 def adminCustomerContact(request):
 	customerContactDataset = Contact.objects.all
@@ -74,6 +78,35 @@ def contactDelete(request, id):
 	customerContact.delete()
 	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
 	return redirect('/adminCustomerContact.html')
+
+def adminStaffInfo(request):
+	staffData = Staff.objects.all
+	return render(request, 'admin/staff.html', {'staffDataset': staffData})
+
+def adminAddNewStaff(request):
+	ID = uuid.uuid4()
+	return render(request, 'admin/addNewStaff.html', {'staffID': ID})
+
+def AddNewStaff(request):
+	if request.method == 'POST':
+		form = StaffForm(request.POST)
+		if form.is_valid(): 
+			form.save()
+			return redirect('/adminStaffInfo.html')
+		else:
+			pass 
+			#no operation
+	else:
+		form = StaffForm()
+		return render(request, 'admin/addNewStaff.html', {'form': form})
+
+	
+
+def adminStaffRoster(request):
+	return render(request, 'admin/staffRoster.html', {})
+
+def adminStaffLeaveApplication(request):
+	return render(request, 'admin/staffOnLeave.html', {})
 
 
 

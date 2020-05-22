@@ -36,7 +36,13 @@ urlpatterns = [
 
 	#admin
 	path('adminHome.html', views.adminHome, name= 'adminHome'),
+	path('adminCustomerAppointment.html', views.adminCustomerAppointment, name= 'adminCustomerAppointment'),
 	path('adminCustomerContact.html', views.adminCustomerContact, name= 'adminCustomerContact'),
+	path('adminStaffInfo.html', views.adminStaffInfo, name= 'adminStaffInfo'),
+	path('adminAddNewStaff.html', views.adminAddNewStaff, name= 'adminAddNewStaff'),
+	path('AddNewStaff', views.AddNewStaff, name='AddNewStaff'),
+	path('adminStaffRoster.html', views.adminStaffRoster, name= 'adminStaffRoster'),
+	path('adminStaffLeaveApplication.html', views.adminStaffLeaveApplication, name= 'adminStaffLeaveApplication'),
 
 	path('contactRead/<int:id>', views.contactRead, name= 'contactRead'),
 	path('contactDelete/<int:id>', views.contactDelete, name= 'contactDelete'),

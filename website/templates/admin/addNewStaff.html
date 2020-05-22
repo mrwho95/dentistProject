@@ -1,0 +1,83 @@
+{% extends 'adminBase.html' %}
+{%load static%}
+{% block title%}Medcare Admin{%endblock%}
+
+{% block content %}
+
+<section class="appointment-area">
+	<div class="container">
+		<!-- <h2>Add New Staff</h2><br> -->
+		<div class="row">
+			<!-- <div class="appointment-inner"> -->
+				<div class="col-lg-12">
+					<div class="appointment-form">
+			            <h3>Add New Staff</h3>
+			            <form action="/AddNewStaff" method="POST">
+			            	{% csrf_token %}
+			            	<div class="row">
+			            		<div class="col-lg-6">
+			            			<div class="form-group">
+					                    <label>Full Name</label>
+					                    <input type="text" name="name" value="{{form.name}}" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" required>
+					                </div>
+			            		</div>
+			            		<div class="col-lg-6">
+			            			<div class="form-group">
+					                    <label>ID</label>
+					                    <input type="text" name="staffID" value="{{staffID}}" placeholder="Your ID" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your ID'" required> 
+					                </div>
+			            		</div>
+			            	</div>
+			            	<div class="row">
+			                	<div class="col-lg-6">
+			                		<div class="form-group">
+					                    <label>Email</label>
+					                    <input type="email" name="email" value="{{form.email}}" placeholder="Your Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'" required> 
+					                </div>
+			                	</div>
+			                	<div class="col-lg-6">
+			                		<div class="form-group">
+					                    <label>Phone Number</label>
+					                    <input type="tel" name="phone" value="{{form.phone}}" placeholder="Your Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" required> 
+					                </div>
+			                	</div>
+			                </div>
+			                 <div class="row">
+			                	<div class="col-lg-6">
+			                		<div class="form-group">
+					                    <label>Age</label>
+					                    <input type="number" name="age" value="{{form.age}}" placeholder="Your Age" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Age'" required> 
+					                </div>
+			                	</div>
+			                	<div class="col-lg-6">
+			              			<div class="form-group">
+					                    <label>Address</label>
+					                    <input type="text" name="address" value="{{form.address}}" placeholder="Your Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Address'" required> 
+					                </div>
+			                	</div>
+			                </div>
+			                <div class="row">
+			                	<div class="col-lg-6">
+			                		<div class="form-group">
+					                    <label>Position</label>
+					                    <input type="text" name="position" value="{{form.position}}" placeholder="Your Position" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Position'" required> 
+					                </div>
+			                	</div>
+			                	<div class="col-lg-6">
+			                		<div class="form-group">
+					                    <label>Department</label>
+					                    <input type="text" name="department" value="{{form.department}}" placeholder="Your Department" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Department'" required> 
+					                </div>
+			                	</div>
+			                </div>
+			                <button type="submit" class="main_btn">Make an Appointment</button>
+			            </form>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>	
+	</div>
+</section>
+
+
+{% endblock %}
