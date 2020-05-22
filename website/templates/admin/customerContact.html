@@ -19,14 +19,16 @@
 					</thead>
 					<tbody>
 					{% for contactData in contactDataset%}
-						<tr>
-							<td>{{contactData.name}}</td>
-							<td>{{contactData.email}}</td>
-							<td>{{contactData.subject}}</td>
-							<td>{{contactData.content}}</td>
-							<td><a href="" class="btn btn-primary">Read</a></td>
-							<td><a href="" class="btn btn-danger">Delete</a></td>
-						</tr>
+						{% if contactData.read == False %}
+							<tr>
+								<td>{{contactData.name}}</td>
+								<td>{{contactData.email}}</td>
+								<td>{{contactData.subject}}</td>
+								<td>{{contactData.content}}</td>
+								<td><a href="/contactRead/{{contactData.id}}" class="btn btn-primary">Read</a></td>
+								<td><a href="/contactDelete/{{contactData.id}}" class="btn btn-danger">Delete</a></td>
+							</tr>
+						{% endif %}
 					{% endfor %}
 					</tbody>
 				</table>

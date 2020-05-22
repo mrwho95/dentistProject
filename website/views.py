@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .models import Doctor, Contact  #import {class name from model file}
 # from .models import Contact
+import sweetify
 
 # Create your views here.
 # def home(request):
@@ -61,9 +62,18 @@ def adminCustomerContact(request):
 	customerContactDataset = Contact.objects.all
 	return render(request, 'admin/customerContact.html', {'contactDataset': customerContactDataset})
 
+def contactRead(request, id):
+	customerContact = Contact.objects.get(id = id)
+	customerContact.read = True
+	customerContact.save()
+	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+	return redirect('/adminCustomerContact.html')
 
-
-
+def contactDelete(request, id):
+	customerContact = Contact.objects.get(id = id)
+	customerContact.delete()
+	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+	return redirect('/adminCustomerContact.html')
 
 
 

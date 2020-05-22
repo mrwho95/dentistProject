@@ -15,6 +15,7 @@ class Contact(models.Model):
 	email = models.EmailField(max_length = 100)
 	content = models.CharField(max_length = 100)
 	subject = models.CharField(max_length =100)
+	read = models.BooleanField(default=False)
 
 	def __str__(self):
 		return "A new message: "+ self.subject + ' which sent by ' + self.name

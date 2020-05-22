@@ -38,4 +38,8 @@ urlpatterns = [
 	path('adminHome.html', views.adminHome, name= 'adminHome'),
 	path('adminCustomerContact.html', views.adminCustomerContact, name= 'adminCustomerContact'),
 
+	path('contactRead/<int:id>', views.contactRead, name= 'contactRead'),
+	path('contactDelete/<int:id>', views.contactDelete, name= 'contactDelete'),
+
+
 ]
