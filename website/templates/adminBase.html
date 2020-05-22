@@ -60,13 +60,21 @@
                             <li class="nav-item"><a class="nav-link" href="department.html">Department</a></li> 
                             <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>   -->  
                             <li class="nav-item submenu dropdown">
-                                <a href="adminCustomerContact.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
+                                <a href="adminCustomerAppointment.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
                                 <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="adminCustomerAppointment.html">Appointment</a></li>
                                     <li class="nav-item"><a class="nav-link" href="adminCustomerContact.html">Contact</a></li>
-                                    <!-- <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="element.html">element</a></li> -->
+                                    <!-- <li class="nav-item"><a class="nav-link" href="element.html">element</a></li> -->
                                 </ul>
-                            </li> 
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="adminStaffInfo.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="adminStaffInfo.html">Info</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="adminStaffRoster.html">Roster</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="adminStaffLeaveApplication.html">On Leave</a></li>
+                                </ul>
+                            </li>  
                             <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
                         </ul>
                     </div>
@@ -176,13 +184,28 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- datatable -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
+<!-- {% load sweetify %}
+{% sweetify %} -->
+
 </body>
 </html>
 
 <script>
     $(document).ready( function () {
-    $('#contactTable').DataTable({
-        paging: true
-    });
-} );
+        $('#contactTable').DataTable({
+            paging: true
+        });
+    } );
+
+    $(document).ready( function () {
+        $('#appointmentTable').DataTable({
+            paging: true
+        });
+    } );
+
+    $(document).ready( function () {
+        $('#staffTable').DataTable({
+            paging: true
+        });
+    } );
 </script>
