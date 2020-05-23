@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
+from django.contrib import messages
 from .models import Doctor, Contact, Staff #import {class name from model file}
 from .forms import StaffForm
 import sweetify
@@ -71,12 +73,14 @@ def contactRead(request, id):
 	customerContact.read = True
 	customerContact.save()
 	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+	messages.success(request, 'The contact message is done to read!')
 	return redirect('/adminCustomerContact.html')
 
 def contactDelete(request, id):
 	customerContact = Contact.objects.get(id = id)
 	customerContact.delete()
 	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+	messages.success(request, 'Successfully to delete contact message!')
 	return redirect('/adminCustomerContact.html')
 
 def adminStaffInfo(request):
@@ -92,7 +96,8 @@ def AddNewStaff(request):
 		form = StaffForm(request.POST)
 		if form.is_valid(): 
 			form.save()
-			return redirect('/adminStaffInfo.html')
+			messages.success(request, 'Successfully to add new staff!')
+			return HttpResponseRedirect('/adminStaffInfo.html')
 		else:
 			pass 
 			#no operation
