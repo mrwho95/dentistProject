@@ -43,8 +43,8 @@
 								<td>{{staffData.phone}}</td>
 								<td>{{staffData.age}}</td>
 								<td>{{staffData.address}}</td>
-								<td><a href="#" class="btn btn-warning">Edit</a></td>
-								<td><a href="#" class="btn btn-danger">Delete</a></td>
+								<td><a class="btn btn-warning" data-toggle="modal" data-target="#editStaff{{staffData.id}}">Edit</a></td>
+								<td><a href="/deleteStaff/{{staffData.id}}" class="btn btn-danger">Delete</a></td>
 							</tr>
 					{% endfor %}
 					</tbody>
@@ -53,5 +53,53 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal -->
+{% for staffData in staffDataset %}
+<div class="modal fade" id="editStaff{{staffData.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+		<form method="POST" action="/editStaff/{{staffData.id}}" style="width: 100%;">
+			{% csrf_token %}
+	  		<div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLongTitle">Edit Staff's Information</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <label>Name</label>  
+                  <input type="text" name="name" class="form-control" value="{{staffData.name}}" />  
+                  <br />
+                  <label>ID</label>  
+                  <input type="text" name="staffID" class="form-control" value="{{staffData.staffID}}" readonly=""/>  
+                  <br />  
+                  <label>Position</label>  
+                  <input type="text" name="position" class="form-control" value="{{staffData.position}}" />  
+                  <br />
+                  <label>Department</label>  
+                  <input type="text" name="department" class="form-control" value="{{staffData.department}}" />
+                  <br />
+                  <label>Email</label>  
+                  <input type="email" name="email" class="form-control" readonly="" value="{{staffData.email}}" />  
+                  <br />   
+                  <label>Phone Number</label>  
+                  <input type="tel" name="phone" class="form-control" value="{{staffData.phone}}" />  
+                  <br />  
+                  <label>Age</label>  
+                  <input type="number" name="age" class="form-control" value="{{staffData.age}}" />  
+                  <br />
+                  <label>Address</label>  
+                  <input type="text" name="address" class="form-control" value="{{staffData.address}}" />
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+	  	</form>
+  </div>
+</div>
+{% endfor %}
 
 {% endblock %}

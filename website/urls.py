@@ -41,6 +41,8 @@ urlpatterns = [
 	path('adminStaffInfo.html', views.adminStaffInfo, name= 'adminStaffInfo'),
 	path('adminAddNewStaff.html', views.adminAddNewStaff, name= 'adminAddNewStaff'),
 	path('AddNewStaff', views.AddNewStaff, name='AddNewStaff'),
+	path('editStaff/<int:id>', views.editStaff, name='editStaff'),
+	path('deleteStaff/<int:id>', views.deleteStaff, name='deleteStaff'),
 	path('adminStaffRoster.html', views.adminStaffRoster, name= 'adminStaffRoster'),
 	path('adminStaffLeaveApplication.html', views.adminStaffLeaveApplication, name= 'adminStaffLeaveApplication'),
 

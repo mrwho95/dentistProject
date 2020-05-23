@@ -99,13 +99,30 @@ def AddNewStaff(request):
 			messages.success(request, 'Successfully to add new staff!')
 			return HttpResponseRedirect('/adminStaffInfo.html')
 		else:
-			pass 
-			#no operation
+			form = StaffForm()
+			return render(request, 'admin/addNewStaff.html', {'form': form})
+	else:
+		pass
+
+def editStaff(request, id):
+	staff = Staff.objects.get(id = id)
+	form = StaffForm(request.POST, instance = staff)
+	if  form.is_valid():
+		form.save()
+		messages.success(request, 'Successfully to edit staff information!')
+		# return redirect('/adminStaffInfo.html')
+		return HttpResponseRedirect('/adminStaffInfo.html')
 	else:
 		form = StaffForm()
-		return render(request, 'admin/addNewStaff.html', {'form': form})
+		return redirect('/adminStaffInfo.html')
+		# return render(request, 'admin/staff.html', {'form': form})
 
-	
+def deleteStaff(request, id):
+	staff = Staff.objects.get(id = id)
+	staff.delete()
+	# sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+	messages.success(request, 'Successfully to delete staff information!')
+	return redirect('/adminStaffInfo.html')
 
 def adminStaffRoster(request):
 	return render(request, 'admin/staffRoster.html', {})
