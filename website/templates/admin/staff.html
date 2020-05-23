@@ -6,16 +6,14 @@
 <div class="container">
 	<h2>Staff's Information</h2><br>
 	{% if messages %}
-	<ul class="messages">
 	    {% for message in messages %}
-	    <div class="alert alert-{{message.tags}}" role="alert">
+	    <div class="alert {{message.tags}}" role="alert">
 	    	{{message}}
 	    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			    <span aria-hidden="true">&times;</span>
 			</button>
 		</div>
 	    {% endfor %}
-	</ul>
 	{% endif %}
 	<a href="adminAddNewStaff.html" class="btn btn-primary">Add New Staff</a><br><br>
 	<div class="row">
