@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'website',
     'sweetify',
 ]
@@ -136,6 +137,11 @@ MESSAGE_TAGS = {
 }
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = "/adminHome.html"
+LOGOUT_REDIRECT_URL = "/"
 
 
 # Email Settings
