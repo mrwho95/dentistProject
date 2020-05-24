@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.contrib import messages
-from .models import Doctor, Contact, Staff #import {class name from model file}
-from .forms import StaffForm
+from .models import Doctor, Contact, Staff, Appointment #import {class name from model file}
+from .forms import StaffForm, AppointmentForm
+from datetime import datetime
 import sweetify
 import uuid
 
@@ -14,6 +15,25 @@ import uuid
 
 def index(request):
 	return render(request, 'user/index.html', {})
+
+def makeAppointment(request):
+	date = datetime.today().strftime('%d/%m/%Y')
+	# now = datetime.now().strftime('%H:%M')
+	return render(request, 'user/appointment.html', {'date': date})
+
+def bookAppointment(request):
+	if request.method == "POST":
+		form = AppointmentForm(request.POST)
+		if form.is_valid(): 
+			form.save()
+			messages.success(request,  'Successfully to submit appointment. We will notice you shortly!')
+			return HttpResponseRedirect('/makeAppointment.html')
+		else:
+			form = AppointmentForm()
+			return render(request, '/makeAppointment.html', {'form': form})
+	else:
+		pass
+	
 
 def about_us(request):
 	return render(request, 'user/about-us.html', {})
@@ -62,7 +82,8 @@ def adminHome(request):
 	return render(request, 'admin/home.html', {})
 
 def adminCustomerAppointment(request):
-	return render(request, 'admin/customerAppointment.html', {})
+	appointment = Appointment.objects.all
+	return render(request, 'admin/customerAppointment.html', {'appointmentDataset': appointment})
 
 def adminCustomerContact(request):
 	customerContactDataset = Contact.objects.all

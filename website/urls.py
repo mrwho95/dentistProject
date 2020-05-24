@@ -33,6 +33,8 @@ urlpatterns = [
 	path('doctors.html', views.doctors, name="doctors"),
 	path('single-blog.html', views.single_blog, name="single_blog"),
 	path('element.html', views.element, name="element"),
+	path('makeAppointment.html', views.makeAppointment, name="makeAppointment"),
+	path('bookAppointment', views.bookAppointment, name="bookAppointment"),
 
 	#admin
 	path('adminHome.html', views.adminHome, name= 'adminHome'),
