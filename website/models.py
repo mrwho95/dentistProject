@@ -32,3 +32,21 @@ class Staff(models.Model):
 
 	def __str__(self):
 		return "Staff "+ self.name
+
+class Appointment(models.Model):
+	name = models.CharField(max_length=100)
+	NRIC = models.CharField(max_length=20)
+	email = models.EmailField(max_length = 100)
+	phone = models.CharField(max_length = 50 , null = True)
+	date= models.DateField(null = False)
+	time = models.CharField(null = False, max_length=50)
+
+	def __str__(self):
+		return self.name+ " got appointment on " + str(self.date)
+
+# class Admin(models.Model):
+# 	username = models.CharField(max_length=100)
+# 	fullname = models.CharField(max_length = 100)
+# 	email = models.CharField(max_length = 50)
+# 	password = models.CharField(max_length = 50, null=True)
+# 	admin = models.BooleanField(default = True)

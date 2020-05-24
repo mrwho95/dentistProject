@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Staff
+from .models import Staff, Appointment
 
 class StaffForm(forms.ModelForm):
 	class Meta:
@@ -15,4 +15,10 @@ class StaffForm(forms.ModelForm):
 			'position',
 			'department'
 		]
+		exclude = ()
+
+class AppointmentForm(forms.ModelForm):
+	class Meta:
+		model = Appointment
+		field = ['name', 'NRIC', 'email', 'phone', 'date', 'time']
 		exclude = ()

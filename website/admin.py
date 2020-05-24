@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Doctor, Staff
+from .models import Doctor, Staff, Appointment
 from .models import Contact
 
 # Regiser models to admin site
@@ -7,3 +7,4 @@ from .models import Contact
 admin.site.register(Doctor)
 admin.site.register(Contact)
 admin.site.register(Staff)
+admin.site.register(Appointment)
