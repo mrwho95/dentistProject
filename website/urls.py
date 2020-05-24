@@ -21,10 +21,12 @@ from . import views
 
 urlpatterns = [
 
-	
+	path('', include("django.contrib.auth.urls")),
+	# path('login', include("django.contrib.auth.urls")),
+	path('register.html', views.register, name ="register"),
 	
 	# user
-	path('', views.index, name ="index"),
+	# path('', views.index, name ="index"),
 	path('index.html', views.index, name ="index"),
 	path('about-us.html', views.about_us, name ="about_us"),
 	path('blog.html', views.blog, name="blog"),

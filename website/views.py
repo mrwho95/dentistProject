@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
+
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.contrib import messages
 from .models import Doctor, Contact, Staff, Appointment #import {class name from model file}
-from .forms import StaffForm, AppointmentForm
+from .forms import StaffForm, AppointmentForm, RegisterForm
 from datetime import datetime
 import sweetify
 import uuid
@@ -12,6 +13,23 @@ import uuid
 # Create your views here.
 # def home(request):
 # 	return render(request, 'index.html', {})
+
+def login(request):
+	return render(request, 'registration/login.html', {})
+
+def register(request):
+	if request.method == "POST":
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request,  'Successfully to create user account!')
+			return HttpResponseRedirect('/login.html')
+		else:
+			pass
+	else:
+		form = RegisterForm()
+
+	return render(request, 'registration/register.html', {"form": form})
 
 def index(request):
 	return render(request, 'user/index.html', {})

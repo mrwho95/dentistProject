@@ -1,0 +1,118 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'website/img/favicon.png' %}" type="image/png">
+    <title>{%block title%}Medcare Medical{%endblock%}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'website/vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/vendors/animate-css/animate.css' %}">
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+</head>
+<body>
+
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
+        <div class="top_menu row m0">
+            <div class="container">
+                <div class="float-left">
+                    <a class="dn_btn" href="mailto:medical@example.com"><i class="ti-email"></i>medical@example.com</a>
+                    <span class="dn_btn"> <i class="ti-location-pin"></i>Find our Location</span>
+                </div>
+                <div class="float-right">
+                    <ul class="list header_social">
+                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                        <li><a href="#"><i class="ti-skype"></i></a></li>
+                        <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+                    </ul>   
+                </div>
+            </div>  
+        </div>
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="/login"><img src="{% static 'website/img/logo.png' %}" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="/register.html">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>  
+    </header>
+    <!--================Header Menu Area =================-->
+
+
+
+{% block content %}
+
+{% endblock %}
+
+    <!-- start footer Area -->
+<footer class="footer-area area-padding-top">
+        <div class="container">
+    
+        <div class="row footer-bottom d-flex justify-content-between">
+            <p class="col-lg-8 col-sm-12 footer-text m-0">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Mr Who</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            <div class="col-lg-4 col-sm-12 footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer Area -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{% static 'website/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/popper.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/stellar.js' %}"></script>
+<script src="{% static 'website/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/mail-script.js' %}"></script>
+<script src="{% static 'website/js/contact.js' %}"></script>
+<script src="{% static 'website/js/jquery.form.js' %}"></script>
+<script src="{% static 'website/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'website/js/mail-script.js' %}"></script>
+<script src="{% static 'website/js/theme.js' %}"></script>
+
+<!-- datatable -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+<!-- {% load sweetify %}
+{% sweetify %} -->
+
+</body>
+</html>
